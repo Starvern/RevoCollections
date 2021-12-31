@@ -1,0 +1,13 @@
+name: RevoCollections
+version: 1.0.0
+main: ware.revo.collections.RevoCollections
+api-version: 1.17
+prefix: RevoCollections
+authors: [ Starvern ]
+description: A collections plugin
+depend: [ CMILib ]
+softdepend: [ HeadDatabase ]
+commands:
+  collections:
+    description: View the collections.
+    aliases: [ collection ]

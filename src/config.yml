@@ -1,0 +1,153 @@
+# RevoCollections Configuration 1.0.0
+#
+# Available actions:
+# [effect] <effect name>
+# [message] <message>
+# [broadcast] <broadcast message>
+# [player] <command>
+# [console] <command>
+#
+# Any missing sections may result in error
+
+status:
+  locked: "&cLocked"
+  unlocked: "&aUnlocked"
+  completed: "&aCompleted"
+  incomplete: "&cIncomplete"
+
+gui:
+  next_page:
+    material: ARROW
+    name: '{#00FF00}Next Page'
+    slot: 53
+  last_page:
+    material: MINECART
+    name: '{#FF0000}Back Page'
+    slot: 45
+  filler_item: # Used in all menus
+    name: " "
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 35
+      - 36
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 49
+      - 50
+      - 51
+      - 52
+      - 53
+  main: # Used for the main menu
+    title: "&b&lCollections Main Menu"
+    collections: # Automatically filled in by any collections you create
+      slots: # Collections will only fill in these slots, when filled, it will generate a second page
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 29
+        - 30
+        - 31
+        - 32
+        - 33
+  collection: # Used for each collection's menu
+    title: "&b&lCollection &7- &e%collection_name%"
+    slots: # Requirements will only fill in these slots, when filled, it will generate a second page
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+
+messages:
+  error_notplayer: "{#FF0000}You must be a player to execute this command."
+
+collections:
+  example:
+    access_permission: "collections.example"
+    locked:
+      name: "&aExample Collection"
+      enchanted: false
+      material: BARRIER
+      lore:
+        - "&7An example collection."
+        - ""
+        - "&cLocked"
+    unlocked:
+      name: "&aExample Collection"
+      enchanted: false
+      material: BOOK
+      lore:
+        - "&7An example collection."
+        - ""
+        - "&aUnlocked"
+    completed:
+      name: "&aExample Collection"
+      enchanted: true
+      material: BOOK
+      lore:
+        - "&7An example collection."
+        - ""
+        - "&aCompleted"
+    required_permissions:
+      item_a:
+        permission: "collections.a"
+        name: "&7Unlock &aCollection A"
+        material: PAPER
+        lore:
+          - "&7Unlock this collection by completing"
+          - "&7other collections."
+          - ""
+          - "%status%"
+      item_b:
+        permission: "collections.b"
+        name: "&7Unlock &bCollection B"
+        material: PAPER
+        lore:
+          - "&7Unlock this collection by completing"
+          - "&7other collections."
+          - ""
+          - "%status%"
+      item_c:
+        permission: "collections.c"
+        name: "&7Unlock &cCollection C"
+        material: PAPER
+        lore:
+          - "&7Unlock this collection by completing"
+          - "&7other collections."
+          - ""
+          - "%status%"
+    reward_item:
+      name: "&bSpeed 2 &6Bonus"
+      material: POTION
+      slot: 4
+      lore:
+        - ""
+        - "&7Gain speed 2 whenever"
+        - "&7you complete the collection!"
+    commands:
+      - "[effect] speed 20 1"
+      - "[message] &aYou've completed the Example Collection!"
