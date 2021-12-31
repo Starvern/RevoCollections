@@ -1,9 +1,5 @@
 # RevoCollections
-An powerful, yet flexible achievement system.
-
-
-**Revo Collections**
-> An efficient and powerful achievement system
+A powerful, yet flexible achievement system.
 
 **Dependencies**
 > LuckPerms https://luckperms.net/download
